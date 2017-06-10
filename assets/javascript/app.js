@@ -13,18 +13,14 @@ $(document).ready(function() {
   var database = firebase.database();
   
 	$('#sections').on('click', 'button.submitButton', function() {
-		console.log("Test");
-    var employee = $("#employeeName").val().trim();
-    database.ref().set({
-      employee: employee
-    });
+    toFireBase();
 	});
 
-function tofirebase() {
-	var employeeName = $("#Employee").val();
-	database.ref().set({
-				employee: employeeName,
-			});
-};
+  function toFireBase() {
+  	    var employee = $("#employeeName").val().trim();
+      database.ref().set({
+        employee: employee
+      });
+  };
 
 });
