@@ -11,15 +11,17 @@ $(document).ready(function() {
   };
   firebase.initializeApp(config);
   var database = firebase.database();
-  
+
 	$('#sections').on('click', 'button.submitButton', function() {
     toFireBase();
 	});
 
   function toFireBase() {
   	    var employee = $("#employeeName").val().trim();
-      database.ref().set({
-        employee: employee
+				var role = $("#role").val().trim();
+      database.ref().push({
+        employee: employee,
+				role: role
       });
   };
 
