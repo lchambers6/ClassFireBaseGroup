@@ -20,4 +20,11 @@ $(document).ready(function() {
     });
 	});
 
+function tofirebase() {
+	var employeeName = $("#Employee").val();
+	database.ref().set({
+				employee: employeeName,
+			});
+};
+
 });
